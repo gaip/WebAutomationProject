@@ -5,6 +5,7 @@ import com.propine.parser.constants.BrowserConstants;
 import com.propine.parser.constants.PathConstants;
 import com.propine.parser.constants.PropertiesConstants;
 import com.propine.parser.directoryManager.Directory;
+import com.propine.parser.fileReader.excel.ExcelReader;
 import com.propine.parser.fileReader.properties.PropertyReader;
 import com.propine.parser.utils.Screenshot;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -128,6 +129,12 @@ public class BaseTest {
 
         logger.info("Execution completed for Testcase:: " + methodName + "| Invocation Count:: " + invocationCount + " | " +
                 "Execution Status:: " + executionStatus);
+    }
+
+    @DataProvider(name = "testData")
+    public Object[][] testData(){
+        ExcelReader excelReader = new ExcelReader();
+        return excelReader.readFile();
     }
 
     private ChromeOptions getChromeOptions() {

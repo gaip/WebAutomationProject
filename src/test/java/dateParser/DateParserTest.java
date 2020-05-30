@@ -1,39 +1,29 @@
 package dateParser;
 
 import base.BaseTest;
-import com.propine.parser.component.DateParser;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class DateParserTest extends BaseTest {
 
-    @Test
-    public void testDate() {
+    Logger logger = LoggerFactory.getLogger(DateParserTest.class);
+
+    @Test(dataProvider = "testData")
+    public void testDate(String testValue, String expectedResult) {
+
+        logger.info("TestValue:: " + testValue + " | Expected Result:: " + expectedResult);
 
         // fill date
-        dateParser.enterDate("25 Dec 2019");
+        dateParser.enterDate(testValue);
 
         // click submit
         dateParser.clickSubmitButton();
 
         // check result
         String result = dateParser.fetchResult();
-        Assert.assertEquals(result, "abc");
-
-    }
-
-    @Test
-    public void testDate2() {
-
-        // fill date
-        dateParser.enterDate("25 Dec 2019");
-
-        // click submit
-        dateParser.clickSubmitButton();
-
-        // check result
-        String result = dateParser.fetchResult();
-        Assert.assertEquals(result, "abc");
+        Assert.assertEquals(result, expectedResult);
 
     }
 }
