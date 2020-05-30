@@ -7,7 +7,7 @@ public class DateParser implements IDateParser {
 
     // create driver object for DateParser
     private WebDriver driver;
-    WebDriverActions webDriverActions;
+    private WebDriverActions webDriverActions;
 
     // constructor to initiate driver object and get webdriver action instance
     public DateParser(WebDriver driver) {

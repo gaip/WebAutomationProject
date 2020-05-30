@@ -1,6 +1,8 @@
 package com.propine.parser.fileReader.properties;
 
 import com.propine.parser.constants.PathConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,6 +11,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertyReader {
+
+    private Logger logger = LoggerFactory.getLogger(PropertyReader.class);
 
     private Properties properties = new Properties();
 
@@ -20,6 +24,7 @@ public class PropertyReader {
      * read and store all properties
      */
     private void readFile() {
+        logger.info("Reading properties file.");
 
         File file = new File(PathConstants.CONFIG_PROPERTIES_FILE_PATH);
 

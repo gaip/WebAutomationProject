@@ -23,4 +23,21 @@ public class DateParserTest extends BaseTest {
         Assert.assertEquals(result, "abc");
 
     }
+
+    @Test
+    public void testDate2() {
+
+        DateParser dateParser = new DateParser(driver);
+
+        // fill date
+        dateParser.enterDate("25 Dec 2019");
+
+        // click submit
+        dateParser.clickSubmitButton();
+
+        // check result
+        String result = dateParser.fetchResult();
+        Assert.assertEquals(result, "abc");
+
+    }
 }

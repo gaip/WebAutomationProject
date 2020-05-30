@@ -20,6 +20,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
@@ -28,11 +29,16 @@ import java.util.Map;
 
 public class BaseTest {
 
-    Logger logger = LoggerFactory.getLogger(BaseTest.class);
+    private Logger logger = LoggerFactory.getLogger(BaseTest.class);
 
+    // Common WenDriver will be shared
     public WebDriver driver;
-    PropertyReader prop = null;
-    Map<String, Integer> testcaseInvocationCount = new LinkedHashMap<>();
+
+    // To Load Properties file before execution
+    private PropertyReader prop = null;
+
+    // Maintaining testcase invocation to find current execution count
+    private Map<String, Integer> testcaseInvocationCount = new LinkedHashMap<>();
 
     /*
      * Will create initial configurations for the execution
@@ -40,14 +46,14 @@ public class BaseTest {
     @BeforeSuite
     public void configureDriver() {
 
-        PropertyConfigurator.configure(PathConstants.LOG_PROPERTIES_FILE_PATH);
-
-        // Configure logger
-        logger.info("Start Execution");
-
         // clean and create output directories
         Directory dir = new Directory();
         dir.createOutputDirectory();
+
+        // Configure logger
+        PropertyConfigurator.configure(PathConstants.LOG_PROPERTIES_FILE_PATH);
+
+        logger.info("Start Execution");
 
         // read properties
         prop = new PropertyReader();
@@ -60,17 +66,24 @@ public class BaseTest {
             case BrowserConstants.BROWSER_CHROME:
                 WebDriverManager.chromedriver().setup();
                 driver = new EventFiringWebDriver(new ChromeDriver(getChromeOptions()));
+                logger.info("Testcase will be executed on Chrome Browser");
                 break;
             case BrowserConstants.BROWSER_FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 driver = new EventFiringWebDriver(new FirefoxDriver(getFirefoxOptions()));
+                logger.info("Testcase will be executed on Firefox Browser");
                 break;
             default:
-                break;
+                throw new IllegalStateException("Incorrect Browser Value Provided. Value:: " + browser);
         }
 
         // maximize window
         driver.manage().window().maximize();
+    }
+
+    @AfterSuite
+    public void executionEnd(){
+        logger.info("Testcases Execution Completed.");
     }
 
     /*
@@ -79,7 +92,9 @@ public class BaseTest {
     @BeforeMethod
     public void launchBrowser() {
         String url = prop.getProperty(PropertiesConstants.KEY_URL);
+        logger.info("Loading Page::" + url);
         driver.get(url);
+
     }
 
 
@@ -88,15 +103,21 @@ public class BaseTest {
      */
     @AfterMethod
     public void captureResult(ITestResult testResult) {
+        String executionStatus = "Pass";
         String methodName = testResult.getName();
 
         // update method invocation count
         updateInvocationCount(methodName);
 
+        int invocationCount = testcaseInvocationCount.get(methodName);
+
         if (ITestResult.FAILURE == testResult.getStatus()) {
-            int invocationCount = testcaseInvocationCount.get(methodName);
             Screenshot.capture(driver, methodName + "_" + invocationCount);
+            executionStatus = "Fail";
         }
+
+        logger.info("Execution completed for Testcase:: " + methodName + "| Invocation Count:: " + invocationCount + " | " +
+                "Execution Status:: " + executionStatus);
         tearDown();
     }
 
@@ -117,19 +138,15 @@ public class BaseTest {
     }
 
     private void updateInvocationCount(@NonNull String testMethodName) {
-
         if (MapUtils.isNotEmpty(testcaseInvocationCount)) {
-
             if (testcaseInvocationCount.get(testMethodName) == null) {
                 testcaseInvocationCount.put(testMethodName, 1);
             } else {
                 int count = testcaseInvocationCount.get(testMethodName);
                 testcaseInvocationCount.put(testMethodName, count + 1);
             }
-
         } else {
             testcaseInvocationCount.put(testMethodName, 1);
         }
-
     }
 }

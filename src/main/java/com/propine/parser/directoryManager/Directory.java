@@ -1,13 +1,19 @@
 package com.propine.parser.directoryManager;
 
 import com.propine.parser.constants.PathConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
 
 public class Directory {
 
+    private Logger logger = LoggerFactory.getLogger(Directory.class);
+
     public void createOutputDirectory() {
+
+        logger.info("Creating new output directory.");
 
         // clean existig directory
         cleanOutputDirectory();
@@ -16,6 +22,7 @@ public class Directory {
         File outputDir = new File(PathConstants.OUTPUT_DIRECTORY_FILE_PATH);
         outputDir.mkdirs();
 
+        logger.info("Creating new log file.");
         String fileName = "log.txt";
         File logFile = new File(PathConstants.OUTPUT_DIRECTORY_FILE_PATH + "/" + fileName);
         try {
@@ -26,6 +33,7 @@ public class Directory {
     }
 
     private void cleanOutputDirectory() {
+        logger.warn("Deleting existing directory and files.");
         File outputDir = new File(PathConstants.OUTPUT_DIRECTORY_FILE_PATH);
         removeFiles(outputDir);
     }
