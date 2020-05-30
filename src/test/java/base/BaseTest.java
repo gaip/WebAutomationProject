@@ -1,5 +1,6 @@
 package base;
 
+import com.propine.parser.component.DateParser;
 import com.propine.parser.constants.BrowserConstants;
 import com.propine.parser.constants.PathConstants;
 import com.propine.parser.constants.PropertiesConstants;
@@ -19,10 +20,7 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -31,11 +29,11 @@ public class BaseTest {
 
     private Logger logger = LoggerFactory.getLogger(BaseTest.class);
 
-    // Common WenDriver will be shared
-    public WebDriver driver;
+    private WebDriver driver;
+    protected DateParser dateParser;
 
     // To Load Properties file before execution
-    private PropertyReader prop = null;
+    private PropertyReader prop;
 
     // Maintaining testcase invocation to find current execution count
     private Map<String, Integer> testcaseInvocationCount = new LinkedHashMap<>();
@@ -44,7 +42,7 @@ public class BaseTest {
      * Will create initial configurations for the execution
      */
     @BeforeSuite
-    public void configureDriver() {
+    public void setPrerequisite() {
 
         // clean and create output directories
         Directory dir = new Directory();
@@ -55,6 +53,18 @@ public class BaseTest {
 
         logger.info("Start Execution");
 
+/*        // read properties
+        prop = new PropertyReader();*/
+
+    }
+
+    @AfterSuite
+    public void executionEnd() {
+        logger.info("Testcases Execution Completed.");
+    }
+
+    @BeforeClass
+    public void createDriver() {
         // read properties
         prop = new PropertyReader();
 
@@ -81,9 +91,9 @@ public class BaseTest {
         driver.manage().window().maximize();
     }
 
-    @AfterSuite
-    public void executionEnd(){
-        logger.info("Testcases Execution Completed.");
+    @AfterClass
+    public void tearDown() {
+        driver.quit();
     }
 
     /*
@@ -94,7 +104,7 @@ public class BaseTest {
         String url = prop.getProperty(PropertiesConstants.KEY_URL);
         logger.info("Loading Page::" + url);
         driver.get(url);
-
+        dateParser = new DateParser(driver);
     }
 
 
@@ -118,7 +128,6 @@ public class BaseTest {
 
         logger.info("Execution completed for Testcase:: " + methodName + "| Invocation Count:: " + invocationCount + " | " +
                 "Execution Status:: " + executionStatus);
-        tearDown();
     }
 
     private ChromeOptions getChromeOptions() {
@@ -131,10 +140,6 @@ public class BaseTest {
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("disable-infobars");
         return options;
-    }
-
-    private void tearDown() {
-        driver.quit();
     }
 
     private void updateInvocationCount(@NonNull String testMethodName) {

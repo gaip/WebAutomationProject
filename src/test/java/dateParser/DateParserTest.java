@@ -10,8 +10,6 @@ public class DateParserTest extends BaseTest {
     @Test
     public void testDate() {
 
-        DateParser dateParser = new DateParser(driver);
-
         // fill date
         dateParser.enterDate("25 Dec 2019");
 
@@ -26,8 +24,6 @@ public class DateParserTest extends BaseTest {
 
     @Test
     public void testDate2() {
-
-        DateParser dateParser = new DateParser(driver);
 
         // fill date
         dateParser.enterDate("25 Dec 2019");
