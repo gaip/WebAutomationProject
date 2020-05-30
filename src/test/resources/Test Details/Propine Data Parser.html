@@ -1,0 +1,260 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<title>Propine Data Parser</title>
+</head>
+<body>
+<h1 align="center" class="root">
+<a name="3hieh5e05tcsh8mgf968f05prs">Propine Data Parser</a>
+</h1>
+<div align="center" class="globalOverview">
+<img src="Propine Data Parser_files/images/Propine Data Parser.jpg"></div>
+<h2 class="topic">
+<a name="1h6v8hdb48u1emcip1am7guvco">1. Pre Test details</a>
+</h2>
+<p class="topicImage">
+<img height="400" src="Propine Data Parser_files/7j62b876kgvvho009792gudmet.png" width="330"></p>
+<h2 class="topic">
+<a name="210isfa3ad955qeo5ut654bjau">2. Initial Screen</a>
+</h2>
+<p class="topicImage">
+<img height="199" src="Propine Data Parser_files/7f4svdb1qu2qgcd98s7vpbq0bk.png" width="400"></p>
+<h3 class="topic">
+<a name="17u3vt41r5gcl1k4qusp1ieb2q">&nbsp;1. UI is clean</a>
+</h3>
+<h3 class="topic">
+<a name="3js6dmgkl3m2ci41v343jknc49">&nbsp;2. Date field label and placeholder states same thing. </a>
+</h3>
+<h3 class="topic">
+<a name="75je4met85672h1bt0rom2r78s">&nbsp;3. Submit button looks good</a>
+</h3>
+<h3 class="topic">
+<a name="4lff0aqkbonutiobt8fmlj43jl">&nbsp;4. Results section is displayed but default value is displayed as 0</a>
+</h3>
+<h3 class="topic">
+<a name="220au4vot6k5lmb0j1g9kaun3f">&nbsp;&nbsp;1. As label is displayed as Results with 's'. It Should display list of results. Not sure on max limit</a>
+</h3>
+<h3 class="topic">
+<a name="777pfhdfaborohgg1k066p65ul">&nbsp;&nbsp;2. Default value is displayed as 0. It might be result counter i.e. number of times results are generated</a>
+</h3>
+<h2 class="topic">
+<a name="77ms8617ideaihcpjkacd8jpgs">3. Test-1</a>
+</h2>
+<h3 class="topic">
+<a name="0tsd0omg9jaeb3k5ho8gm8mtrd">&nbsp;1. Click on Submit Button and Observe Result</a>
+</h3>
+<h3 class="topic">
+<a name="7qh9tkr1vhiau9h9qnvpv9v9qf">&nbsp;2. Results value updated to invalid Date</a>
+</h3>
+<p class="topicImage">
+<img height="82" src="Propine Data Parser_files/23jgind0sgl21lgha71ir6okrp.png" width="400"></p>
+<h3 class="topic">
+<a name="564tve5ku3c9e967k54a2ae14s">&nbsp;&nbsp;1. Default value 0 is changed to Invalid Date. Was expecting it to be 1.</a>
+</h3>
+<h3 class="topic">
+<a name="659nu6lrjh4mbqn1r4m8h8e3tk">&nbsp;&nbsp;2. Was expecting a separate error message section.</a>
+</h3>
+<h2 class="topic">
+<a name="3s4unscureap3rem024taafjel">4. Test-2</a>
+</h2>
+<h3 class="topic">
+<a name="37s6evoibbe9v4ffu9m8vvfkut">&nbsp;1. Enter Date in DD/MM/YYYY format</a>
+</h3>
+<p class="topicImage">
+<img height="82" src="Propine Data Parser_files/3as60422vokedjngovjs13g4d1.png" width="400"></p>
+<h3 class="topic">
+<a name="4q6uvta6tn7rck30j8m2r34gg1">&nbsp;2. Click on Submit and check Results. 
+- Received Invalid Date.</a>
+</h3>
+<p class="topicImage">
+<img height="82" src="Propine Data Parser_files/44obiqm4ca3236tl32eetagioc.png" width="400"></p>
+<h2 class="topic">
+<a name="2ocbhragqkaabro8sleelpvkf3">5. Test-3</a>
+</h2>
+<h3 class="topic">
+<a name="5udfp3p3tf05op5r9jitfbor2a">&nbsp;1. Enter Date without date separator in DD MMM YYYY format</a>
+</h3>
+<p class="topicImage">
+<img height="82" src="Propine Data Parser_files/38vnsea44uv8i4pofoqfinki3q.png" width="400"></p>
+<h3 class="topic">
+<a name="73dtsqjdctmav0nfkfh4nep9nc">&nbsp;2. Click on Submit and Check Result.
+- Date is Parsed Correctly.
+- Was expecting only date value to be part of results but results displays time field as well with timezone.
+- Correct Day of Date is displayed.</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/58delq3f3lva86o2ns7kmeebg4.png" width="400"></p>
+<h2 class="topic">
+<a name="19dcqsmc1brif88n3kt8lo1qeo">6. Test-4</a>
+</h2>
+<h3 class="topic">
+<a name="2a8656pm4taecvbqha3souabfr">&nbsp;1. Enter New date without separator</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/6b5snrbo28jr4dup3a2aivajn5.png" width="400"></p>
+<h3 class="topic">
+<a name="651hub7340jbg6ffjrp1hk7lje">&nbsp;2. Click Submit and check Results
+- Overwrites Results value. Since label is named as Results, expectation was to see multiple results.</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/72dij92obii594p52t7h7f3men.png" width="400"></p>
+<h2 class="topic">
+<a name="3do7vu6pkqcre9u3hjg64ov1v9">7. Test-5</a>
+</h2>
+<h3 class="topic">
+<a name="661usakd02o31tc2dr3bt8ec0i">&nbsp;1. Enter date and time without separator</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/701ctef1thio6f155n24rmtbvg.png" width="400"></p>
+<h3 class="topic">
+<a name="54d3jv1gfgu48vv7dbhvgiq0g7">&nbsp;2. Click on Submit and check Results
+- As field label and placeholder text request for only date, expectation was clear to get Invalid date as result.</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/30l3hfve82qchj0qu1bimdok7a.png" width="400"></p>
+<h2 class="topic">
+<a name="7ienl2lpjbt76f12l7lnv0khu1">8. Test-6</a>
+</h2>
+<h3 class="topic">
+<a name="40qkisa4t3ul6piq0l7gn8dnda">&nbsp;1. Enter date w/o separator and time with separator</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/2npi57t11s24q6hgm92sl4jegj.png" width="400"></p>
+<h3 class="topic">
+<a name="2aaa7420egqa740dgvhql2j4ff">&nbsp;2. Check Result
+- Time value is updated as well. Field label or placeholder text does not specify anything related to time field.</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/5amgmoorat6akng2ubiu83cscc.png" width="400"></p>
+<h2 class="topic">
+<a name="15vhitjm29ki8tgjubua2ic25j">9. Date Formats Test</a>
+</h2>
+<h3 class="topic">
+<a name="27b585qvbdkh4qna87ibb4dsgj">&nbsp;1. Text in DD MM YY format</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/6b5divsbr29bagfcqd92gvcv1l.png" width="400"></p>
+<h3 class="topic">
+<a name="5fqtt11o0d4kk3jnanihop07fn">&nbsp;&nbsp;Result: Unable to parse</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/108r3ci9bvn626o4khl4skcblp.png" width="400"></p>
+<h3 class="topic">
+<a name="2s6hkn052ah0h8tj121femnt40">&nbsp;2. Text in DD Month YY format</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/58i57trpdkpbl6c4n6f83e7it5.png" width="400"></p>
+<h3 class="topic">
+<a name="4gja4tca3658h9iga163l6a4l1">&nbsp;&nbsp;Result</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/33ab734plfmrdu04nn8fdlq629.png" width="400"></p>
+<h3 class="topic">
+<a name="3h2113ko2bickv0qlghi6aalem">&nbsp;3. Text in MM DD YYYY format</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/4di5p7f1mb63vo9f1vkdvmgpb7.png" width="400"></p>
+<h3 class="topic">
+<a name="78ftgf6dnuhmbkq266j6uinbc1">&nbsp;&nbsp;Result</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/36iveed2id92ti3jkal74eirpg.png" width="400"></p>
+<h3 class="topic">
+<a name="08cmk3f8oiabqs52bln54hf541">&nbsp;4. Text in MM DD YY format</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/3qhhpakprbqp2vk040d13qelsk.png" width="400"></p>
+<h3 class="topic">
+<a name="6iklnhlmclloc7hqtk1plcqvjc">&nbsp;&nbsp;Result</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/7io2vtdtqvnpjgi5m50278digq.png" width="400"></p>
+<h3 class="topic">
+<a name="2mapv4sn4thvtqchedspai493t">&nbsp;5. Text in Mon YYYY DD format</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/49dmsk385u15e0j1dlegjk6l1r.png" width="400"></p>
+<h3 class="topic">
+<a name="6q6o843vfq01no6dtv4tt5lmqk">&nbsp;&nbsp;Result</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/2f1gqhidngbe20o1b1bp9ia7uq.png" width="400"></p>
+<h3 class="topic">
+<a name="6q1ndclcus3299nsvcd45uql6s">&nbsp;6. Text in YYYY MM DD format</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/6aph7d9s6nd7drggbeohb91i47.png" width="400"></p>
+<h3 class="topic">
+<a name="44na4fm65dm6nktlnham0ph757">&nbsp;&nbsp;Result</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/3i9qropr1rk6vcama5mjtds7vh.png" width="400"></p>
+<h3 class="topic">
+<a name="1q2sg6tqk39ss50j36sgaof6cr">&nbsp;7. Text in YYYY DD MM format</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/1j5c73ralt4i0o7bcr9o650d1g.png" width="400"></p>
+<h3 class="topic">
+<a name="0klhhl92h62cu2e2ea29487fl0">&nbsp;&nbsp;Result
+- Does not parse entire text else it would have considered 12 for month and 25 for date.</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/2r66pk504orihb338e1pdjpn1i.png" width="400"></p>
+<h2 class="topic">
+<a name="0fs82cjt9rvt19nvjrl3c9khva">10. Junk Characters Test</a>
+</h2>
+<h3 class="topic">
+<a name="4dvn7nnn96l39q4eks4sqnr0pd">&nbsp;1. Random Alphabets</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/1rrqr0me9cc8b7d8k89psn7sh0.png" width="400"></p>
+<h3 class="topic">
+<a name="474ecrp3s5ib4pcasjovvfvpho">&nbsp;&nbsp;Result</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/59esepke06kj52v1pisdcmtjif.png" width="400"></p>
+<h3 class="topic">
+<a name="4t3mma6ttgl4sscrb7qur4amom">&nbsp;2. Random Numbers</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/0eqdad84tosfesgjipjsmm3gsn.png" width="400"></p>
+<h3 class="topic">
+<a name="7nt4eaoj5vvi8dq3ue3hpktdpm">&nbsp;&nbsp;Result</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/21jnrsbg4987cksufh39kfi322.png" width="400"></p>
+<h3 class="topic">
+<a name="0ellhikqqtq6hj0e1e333cp1nb">&nbsp;3. Special Characters</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/48qcpsm1j74r2rj99juvek1bko.png" width="400"></p>
+<h3 class="topic">
+<a name="2k49j559osvcgje0ehidiktref">&nbsp;&nbsp;Result</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/3qik6o6l69lmrtv0sjvm28k92r.png" width="400"></p>
+<h3 class="topic">
+<a name="0v5jld6c46m0pp1fal1eh1iee1">&nbsp;4. Valid Text with Special Character</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/7l6r7t3n6pgin6uim6m5nve0n1.png" width="400"></p>
+<h3 class="topic">
+<a name="7kj5tge6jaotbr7j9bo4kjn2f4">&nbsp;&nbsp;Result
+- accepts text with special character but ignores while parsing and generating result.</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/29ul3plct32bvbqhfds4fdo1ot.png" width="400"></p>
+<h3 class="topic">
+<a name="45pdsrq4s4h2ijgmdqm1i2lc4c">&nbsp;5. Text in Japanese format</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/02pe2npr252q0mpimembd61214.png" width="400"></p>
+<h3 class="topic">
+<a name="2ideu2re3eto6us8gglc8atk6l">&nbsp;&nbsp;Result</a>
+</h3>
+<p class="topicImage">
+<img height="68" src="Propine Data Parser_files/6lem594ncehlkn2gme64roaj6f.png" width="400"></p>
+</body>
+</html>
