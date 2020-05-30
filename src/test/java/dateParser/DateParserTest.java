@@ -2,6 +2,7 @@ package dateParser;
 
 import base.BaseTest;
 import com.propine.parser.component.DateParser;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class DateParserTest extends BaseTest {
@@ -19,6 +20,7 @@ public class DateParserTest extends BaseTest {
 
         // check result
         String result = dateParser.fetchResult();
-        System.out.println(result);
+        Assert.assertEquals(result, "abc");
+
     }
 }

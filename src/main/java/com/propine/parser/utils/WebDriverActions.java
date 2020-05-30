@@ -10,7 +10,7 @@ public class WebDriverActions {
 
     private static WebDriverActions webDriverActions = null;
 
-    // Single class implementation
+    // Singleton class implementation
     public static WebDriverActions getInstance() {
         if (webDriverActions == null) {
             webDriverActions = new WebDriverActions();
