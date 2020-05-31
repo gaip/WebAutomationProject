@@ -2,9 +2,9 @@ package com.propine.parser.testcases.regression;
 
 import com.propine.parser.bo.TestcaseBO;
 import com.propine.parser.componentFlow.FlowDateParser;
-import com.propine.parser.dataProvider.TestDataProvider;
-import com.propine.parser.driverManager.DriverManager;
-import com.propine.parser.services.ExecutionService;
+import com.propine.parser.coreResource.dataProvider.TestDataProvider;
+import com.propine.parser.coreResource.driverManager.DriverManager;
+import com.propine.parser.coreResource.services.ExecutionService;
 import com.propine.parser.utils.TestCaseUtil;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;

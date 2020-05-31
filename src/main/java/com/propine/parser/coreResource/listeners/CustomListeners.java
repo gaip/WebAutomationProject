@@ -1,6 +1,6 @@
-package com.propine.parser.listeners;
+package com.propine.parser.coreResource.listeners;
 
-import com.propine.parser.directoryManager.Directory;
+import com.propine.parser.coreResource.directoryManager.Directory;
 import lombok.NonNull;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.log4j.Logger;

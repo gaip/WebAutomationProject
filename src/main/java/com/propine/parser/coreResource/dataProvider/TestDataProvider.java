@@ -1,6 +1,6 @@
-package com.propine.parser.dataProvider;
+package com.propine.parser.coreResource.dataProvider;
 
-import com.propine.parser.fileReader.excel.ExcelReader;
+import com.propine.parser.coreResource.fileOperations.fileReader.excel.ExcelReader;
 import org.testng.annotations.DataProvider;
 
 public class TestDataProvider {

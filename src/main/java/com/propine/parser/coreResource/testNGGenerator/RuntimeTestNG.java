@@ -1,7 +1,7 @@
-package com.propine.parser.testNG;
+package com.propine.parser.coreResource.testNGGenerator;
 
 import com.propine.parser.constants.FilePathConstants;
-import com.propine.parser.dataProvider.TestDataProvider;
+import com.propine.parser.coreResource.dataProvider.TestDataProvider;
 import org.apache.log4j.Logger;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
@@ -47,7 +47,7 @@ public class RuntimeTestNG {
 		suite.setParallel(XmlSuite.ParallelMode.METHODS);
 
 		// adding custom listeners
-		String customListener = "com.propine.parser.listeners.CustomListeners";
+		String customListener = "com.propine.parser.coreResource.listeners.CustomListeners";
 		List<String> listenersList = new ArrayList<>();
 		listenersList.add(customListener);
 

@@ -1,8 +1,8 @@
-package com.propine.parser.reporting;
+package com.propine.parser.coreResource.reporting;
 
 import com.propine.parser.bo.TestcaseBO;
 import com.propine.parser.constants.TestExecutionStatus;
-import com.propine.parser.fileCreation.HtmlFile;
+import com.propine.parser.coreResource.fileOperations.fileCreation.HtmlFile;
 import org.apache.log4j.Logger;
 
 import java.util.LinkedList;

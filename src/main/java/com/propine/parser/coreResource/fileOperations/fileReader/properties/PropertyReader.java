@@ -1,4 +1,4 @@
-package com.propine.parser.fileReader.properties;
+package com.propine.parser.coreResource.fileOperations.fileReader.properties;
 
 import com.propine.parser.constants.FilePathConstants;
 import com.propine.parser.constants.PropertiesConstants;

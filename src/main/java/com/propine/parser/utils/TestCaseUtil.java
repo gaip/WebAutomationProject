@@ -1,7 +1,7 @@
 package com.propine.parser.utils;
 
 import com.propine.parser.bo.TestcaseBO;
-import com.propine.parser.listeners.CustomListeners;
+import com.propine.parser.coreResource.listeners.CustomListeners;
 
 public class TestCaseUtil {
 

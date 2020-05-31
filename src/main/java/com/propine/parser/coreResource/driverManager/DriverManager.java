@@ -1,8 +1,8 @@
-package com.propine.parser.driverManager;
+package com.propine.parser.coreResource.driverManager;
 
 import com.propine.parser.constants.PropertiesConstants;
 import com.propine.parser.constants.SupportedBrowsers;
-import com.propine.parser.fileReader.properties.PropertyReader;
+import com.propine.parser.coreResource.fileOperations.fileReader.properties.PropertyReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;

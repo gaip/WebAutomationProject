@@ -1,11 +1,11 @@
 package com.propine.parser;
 
 import com.propine.parser.constants.FilePathConstants;
-import com.propine.parser.directoryManager.Directory;
-import com.propine.parser.fileReader.excel.ExcelReader;
-import com.propine.parser.fileReader.properties.PropertyReader;
-import com.propine.parser.reporting.ExecutionReport;
-import com.propine.parser.testNG.RuntimeTestNG;
+import com.propine.parser.coreResource.directoryManager.Directory;
+import com.propine.parser.coreResource.fileOperations.fileReader.excel.ExcelReader;
+import com.propine.parser.coreResource.fileOperations.fileReader.properties.PropertyReader;
+import com.propine.parser.coreResource.reporting.ExecutionReport;
+import com.propine.parser.coreResource.testNGGenerator.RuntimeTestNG;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 

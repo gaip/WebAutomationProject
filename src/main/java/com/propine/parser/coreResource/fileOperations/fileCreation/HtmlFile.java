@@ -1,4 +1,4 @@
-package com.propine.parser.fileCreation;
+package com.propine.parser.coreResource.fileOperations.fileCreation;
 
 import com.propine.parser.constants.FilePathConstants;
 import org.apache.log4j.Logger;

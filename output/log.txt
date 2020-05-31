@@ -1,0 +1,54 @@
+[21:22:44.257] INFO  com.propine.parser.coreResource.fileOperations.fileReader.properties.PropertyReader.readFile(PropertyReader.java:28) - Reading properties file.
+[21:22:45.283] INFO  com.propine.parser.coreResource.testNGGenerator.RuntimeTestNG.create(RuntimeTestNG.java:35)          - Creating TestNG
+[21:22:45.412] INFO  com.propine.parser.coreResource.testNGGenerator.RuntimeTestNG.create(RuntimeTestNG.java:113)         - Generated XML File:
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="methods" name="Runtime TestNG">
+  <listeners>
+    <listener class-name="com.propine.parser.coreResource.listeners.CustomListeners"/>
+  </listeners>
+  <test thread-count="5" parallel="methods" name="Date Parser Test">
+    <classes>
+      <class name="com.propine.parser.testcases.regression.DateParserTest">
+        <methods>
+          <include name="dateParserTest"/>
+        </methods>
+      </class> <!-- com.propine.parser.testcases.regression.DateParserTest -->
+    </classes>
+  </test> <!-- Date Parser Test -->
+</suite> <!-- Runtime TestNG -->
+
+[21:22:45.462] INFO  com.propine.parser.coreResource.listeners.CustomListeners.onStart(CustomListeners.java:23)           - ======= Starting TestCase Execution =======
+[21:22:45.481] INFO  com.propine.parser.coreResource.listeners.CustomListeners.onTestStart(CustomListeners.java:34)       - Executing TestCase:: dateParserTest
+[21:22:45.489] INFO  com.propine.parser.testcases.regression.DateParserTest.dateParserTest(DateParserTest.java:20)        - Validating test with testValue::15 Dec 2019 | Expected Result:: Sun Dec 15 2019 00:00:00 GMT+0000
+[21:22:46.452] INFO  com.propine.parser.coreResource.driverManager.DriverManager.createDriver(DriverManager.java:48)      - Testcase will be executed on Chrome Browser
+[21:22:52.758] INFO  com.propine.parser.utils.Screenshot.capture(Screenshot.java:28)                                      - Screenshot dateParserTest_1/After Filling Value.png Generated
+[21:22:54.221] INFO  com.propine.parser.utils.Screenshot.capture(Screenshot.java:28)                                      - Screenshot dateParserTest_1/After Clicking Submit.png Generated
+[21:22:54.553] INFO  com.propine.parser.utils.Screenshot.capture(Screenshot.java:28)                                      - Screenshot dateParserTest_1/SUCCESS.png Generated
+[21:22:54.620] INFO  com.propine.parser.coreResource.listeners.CustomListeners.onTestSuccess(CustomListeners.java:45)     - TestCase:: dateParserTest Executed Successfully!
+[21:22:54.621] INFO  com.propine.parser.coreResource.listeners.CustomListeners.onTestStart(CustomListeners.java:34)       - Executing TestCase:: dateParserTest
+[21:22:54.621] INFO  com.propine.parser.testcases.regression.DateParserTest.dateParserTest(DateParserTest.java:20)        - Validating test with testValue::abc | Expected Result:: Invalid date
+[21:22:54.938] INFO  com.propine.parser.coreResource.driverManager.DriverManager.createDriver(DriverManager.java:48)      - Testcase will be executed on Chrome Browser
+[21:22:58.890] INFO  com.propine.parser.utils.Screenshot.capture(Screenshot.java:28)                                      - Screenshot dateParserTest_2/After Filling Value.png Generated
+[21:23:02.275] INFO  com.propine.parser.utils.Screenshot.capture(Screenshot.java:28)                                      - Screenshot dateParserTest_2/After Clicking Submit.png Generated
+[21:23:02.615] INFO  com.propine.parser.utils.Screenshot.capture(Screenshot.java:28)                                      - Screenshot dateParserTest_2/SUCCESS.png Generated
+[21:23:02.683] INFO  com.propine.parser.coreResource.listeners.CustomListeners.onTestSuccess(CustomListeners.java:45)     - TestCase:: dateParserTest Executed Successfully!
+[21:23:02.685] INFO  com.propine.parser.coreResource.listeners.CustomListeners.onTestStart(CustomListeners.java:34)       - Executing TestCase:: dateParserTest
+[21:23:02.685] INFO  com.propine.parser.testcases.regression.DateParserTest.dateParserTest(DateParserTest.java:20)        - Validating test with testValue::Feb 17, 2019 | Expected Result:: Sun Feb 17 2019 00:00:00 GMT+0000
+[21:23:03.117] INFO  com.propine.parser.coreResource.driverManager.DriverManager.createDriver(DriverManager.java:48)      - Testcase will be executed on Chrome Browser
+[21:23:07.317] INFO  com.propine.parser.utils.Screenshot.capture(Screenshot.java:28)                                      - Screenshot dateParserTest_3/After Filling Value.png Generated
+[21:23:09.114] INFO  com.propine.parser.utils.Screenshot.capture(Screenshot.java:28)                                      - Screenshot dateParserTest_3/After Clicking Submit.png Generated
+[21:23:09.377] INFO  com.propine.parser.utils.Screenshot.capture(Screenshot.java:28)                                      - Screenshot dateParserTest_3/SUCCESS.png Generated
+[21:23:09.443] INFO  com.propine.parser.coreResource.listeners.CustomListeners.onTestSuccess(CustomListeners.java:45)     - TestCase:: dateParserTest Executed Successfully!
+[21:23:09.444] INFO  com.propine.parser.coreResource.listeners.CustomListeners.onTestStart(CustomListeners.java:34)       - Executing TestCase:: dateParserTest
+[21:23:09.444] INFO  com.propine.parser.testcases.regression.DateParserTest.dateParserTest(DateParserTest.java:20)        - Validating test with testValue::3 | Expected Result:: Invalid date
+[21:23:09.964] INFO  com.propine.parser.coreResource.driverManager.DriverManager.createDriver(DriverManager.java:48)      - Testcase will be executed on Chrome Browser
+[21:23:16.318] INFO  com.propine.parser.utils.Screenshot.capture(Screenshot.java:28)                                      - Screenshot dateParserTest_4/After Filling Value.png Generated
+[21:23:17.761] INFO  com.propine.parser.utils.Screenshot.capture(Screenshot.java:28)                                      - Screenshot dateParserTest_4/After Clicking Submit.png Generated
+[21:23:18.108] INFO  com.propine.parser.utils.Screenshot.capture(Screenshot.java:28)                                      - Screenshot dateParserTest_4/FAILURE.png Generated
+[21:23:18.176] INFO  com.propine.parser.coreResource.listeners.CustomListeners.onTestFailure(CustomListeners.java:50)     - TestCase:: dateParserTest Execution Failed!
+[21:23:18.184] INFO  com.propine.parser.coreResource.listeners.CustomListeners.onFinish(CustomListeners.java:28)          - ======= TestCase Execution Completed =======
+[21:23:18.184] INFO  com.propine.parser.coreResource.listeners.CustomListeners.onFinish(CustomListeners.java:29)          - {dateParserTest=4}
+[21:23:18.236] INFO  com.propine.parser.coreResource.reporting.ExecutionReport.createReport(ExecutionReport.java:22)      - Creating Report..
+[21:23:18.237] INFO  com.propine.parser.coreResource.fileOperations.fileCreation.HtmlFile.createFile(HtmlFile.java:22)    - Creating new html file
+[21:23:18.237] INFO  com.propine.parser.coreResource.fileOperations.fileCreation.HtmlFile.createFile(HtmlFile.java:39)    - HTML File Created at Path:: output

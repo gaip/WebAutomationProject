@@ -1,4 +1,4 @@
-package com.propine.parser.directoryManager;
+package com.propine.parser.coreResource.directoryManager;
 
 import com.propine.parser.constants.FilePathConstants;
 import org.apache.log4j.Logger;

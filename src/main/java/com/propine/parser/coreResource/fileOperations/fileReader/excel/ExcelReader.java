@@ -1,4 +1,4 @@
-package com.propine.parser.fileReader.excel;
+package com.propine.parser.coreResource.fileOperations.fileReader.excel;
 
 import com.propine.parser.constants.FilePathConstants;
 import org.apache.poi.ss.usermodel.CellType;

@@ -1,8 +1,8 @@
-package com.propine.parser.services;
+package com.propine.parser.coreResource.services;
 
 import com.propine.parser.bo.TestcaseBO;
 import com.propine.parser.constants.TestExecutionStatus;
-import com.propine.parser.reporting.ExecutionReport;
+import com.propine.parser.coreResource.reporting.ExecutionReport;
 import com.propine.parser.utils.Screenshot;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
