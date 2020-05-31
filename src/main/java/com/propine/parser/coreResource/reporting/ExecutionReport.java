@@ -64,11 +64,17 @@ public class ExecutionReport {
 			// add data
 			htmlStringBuilder.append("<td>" + testcaseBO.getTestcaseName() + "</td>");
 			htmlStringBuilder.append("<td>" + testcaseBO.getInvocationNumber() + "</td>");
-			htmlStringBuilder.append("<td>" + testcaseBO.getTestValue() + "</td>");
+
+			// handling html tags as testdata while creating report
+			if (testcaseBO.getTestValue().contains("<"))
+				htmlStringBuilder.append("<td>" + testcaseBO.getTestValue().replace("<", "< ") + "</td>");
+			else
+				htmlStringBuilder.append("<td>" + testcaseBO.getTestValue() + "</td>");
+
 			htmlStringBuilder.append("<td>" + testcaseBO.getExpectedResult() + "</td>");
 			htmlStringBuilder.append("<td>" + testcaseBO.getActualResult() + "</td>");
 
-			if(testcaseBO.getExecutionStatus()== TestExecutionStatus.PASS)
+			if (testcaseBO.getExecutionStatus() == TestExecutionStatus.PASS)
 				htmlStringBuilder.append("<td style=\"background-color:#66ffb3\">" + testcaseBO.getExecutionStatus() + "</td>");
 			else
 				htmlStringBuilder.append("<td style=\"background-color:#ff6666\">" + testcaseBO.getExecutionStatus() + "</td>");
@@ -77,8 +83,15 @@ public class ExecutionReport {
 			htmlStringBuilder.append("</tr>");
 		}
 
+		// closing table tag
+		htmlStringBuilder.append("</table>");
+
+		// additional note
+		htmlStringBuilder.append("<br><p><B>Note:</B>Adding Extra space in html tags to avoid alerts on report page" +
+				".</p>");
+
 		// complete html file string
-		htmlStringBuilder.append("</table></body></html>");
+		htmlStringBuilder.append("</body></html>");
 
 		return htmlStringBuilder;
 	}
