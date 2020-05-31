@@ -26,7 +26,7 @@ public class CustomListeners implements IResultListener2 {
 	@Override
 	public void onFinish(ITestContext context) {
 		logger.info("======= TestCase Execution Completed =======");
-		logger.info(testcaseInvocationCount);
+		logger.info("Total Invocation Count per Testcase:: " + testcaseInvocationCount);
 	}
 
 	@Override
