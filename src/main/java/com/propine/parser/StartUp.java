@@ -4,6 +4,7 @@ import com.propine.parser.constants.FilePathConstants;
 import com.propine.parser.directoryManager.Directory;
 import com.propine.parser.fileReader.excel.ExcelReader;
 import com.propine.parser.fileReader.properties.PropertyReader;
+import com.propine.parser.reporting.ExecutionReport;
 import com.propine.parser.testNG.RuntimeTestNG;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -32,5 +33,9 @@ public class StartUp {
 		// Start Execution
 		RuntimeTestNG runtimeTestNG = new RuntimeTestNG();
 		runtimeTestNG.create().run();
+
+		// Report Creation
+		ExecutionReport report = new ExecutionReport();
+		report.createReport();
 	}
 }
