@@ -1,4 +1,5 @@
-package base;
+/*
+package com.propine.parser.test.java.base;
 
 import com.propine.parser.component.DateParser;
 import com.propine.parser.constants.BrowserConstants;
@@ -21,7 +22,6 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -39,9 +39,11 @@ public class BaseTest {
     // Maintaining testcase invocation to find current execution count
     private Map<String, Integer> testcaseInvocationCount = new LinkedHashMap<>();
 
-    /*
+    */
+/*
      * Will create initial configurations for the execution
-     */
+     *//*
+
     @BeforeSuite
     public void setPrerequisite() {
 
@@ -54,8 +56,10 @@ public class BaseTest {
 
         logger.info("Start Execution");
 
+*/
 /*        // read properties
-        prop = new PropertyReader();*/
+        prop = new PropertyReader();*//*
+
 
     }
 
@@ -97,9 +101,11 @@ public class BaseTest {
         driver.quit();
     }
 
-    /*
+    */
+/*
      * Will launch new browser before every @Test method
-     */
+     *//*
+
     @BeforeMethod
     public void launchBrowser() {
         String url = prop.getProperty(PropertiesConstants.KEY_URL);
@@ -109,9 +115,11 @@ public class BaseTest {
     }
 
 
-    /*
+    */
+/*
      * Will terminate browser after every @Test method
-     */
+     *//*
+
     @AfterMethod
     public void captureResult(ITestResult testResult) {
         String executionStatus = "Pass";
@@ -162,3 +170,4 @@ public class BaseTest {
         }
     }
 }
+*/

@@ -1,4 +1,5 @@
-package dateParser;
+/*
+package com.propine.parser.test.java.dateParser;
 
 import base.BaseTest;
 import org.slf4j.Logger;
@@ -27,3 +28,4 @@ public class DateParserTest extends BaseTest {
 
     }
 }
+*/
