@@ -4,13 +4,12 @@ import com.propine.parser.constants.PathConstants;
 import com.propine.parser.directoryManager.Directory;
 import com.propine.parser.fileReader.excel.ExcelReader;
 import com.propine.parser.testNG.RuntimeTestNG;
+import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class StartUp {
 
-	private Logger logger = LoggerFactory.getLogger(StartUp.class);
+	private Logger logger = Logger.getLogger(StartUp.class);
 
 	// starting point of the execution
 	public static void main(String[] args) {

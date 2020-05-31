@@ -1,15 +1,14 @@
 package com.propine.parser.directoryManager;
 
 import com.propine.parser.constants.PathConstants;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
 
 public class Directory {
 
-	private Logger logger = LoggerFactory.getLogger(Directory.class);
+	private Logger logger = Logger.getLogger(Directory.class);
 
 	/**
 	 * Will create new output directory to store execution result

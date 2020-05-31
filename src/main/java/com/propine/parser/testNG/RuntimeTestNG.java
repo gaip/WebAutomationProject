@@ -1,14 +1,14 @@
 package com.propine.parser.testNG;
 
 import com.propine.parser.constants.PathConstants;
+import com.propine.parser.dataProvider.TestDataProvider;
+import org.apache.log4j.Logger;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
 import org.reflections.scanners.SubTypesScanner;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
 import org.reflections.util.FilterBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.TestNG;
 import org.testng.annotations.Test;
 import org.testng.xml.XmlClass;
@@ -23,7 +23,7 @@ import java.util.Set;
 
 public class RuntimeTestNG {
 
-	Logger logger = LoggerFactory.getLogger(RuntimeTestNG.class);
+	Logger logger = Logger.getLogger(RuntimeTestNG.class);
 
 	/**
 	 * Create TestNG Object
@@ -58,7 +58,7 @@ public class RuntimeTestNG {
 
 		// to get all classes containing testcases
 		Reflections reflections = getAllTestcaseClass();
-		Set<Class<?>> allClasses = reflections.getSubTypesOf(Object.class);
+		Set<Class<? extends TestDataProvider>> allClasses = reflections.getSubTypesOf(TestDataProvider.class);
 
 		// Iterating on all classes
 		for (Class c : allClasses) {
@@ -132,6 +132,7 @@ public class RuntimeTestNG {
 
 		return reflect;
 	}
+
 
 	/**
 	 * Unit Test to verify TestNG XML is generated
