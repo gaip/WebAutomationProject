@@ -35,7 +35,7 @@ public class DateParserTest extends TestDataProvider {
 			driver = driverManager.loadHomePage();
 
 			// perform execution steps
-			String actualResult = FlowDateParser.submitTextAndReturnResult(driver, testValue);
+			String actualResult = FlowDateParser.submitTextAndReturnResult(driver, testcaseBO, testValue);
 			testcaseBO.setActualResult(actualResult);
 
 			// assert on value

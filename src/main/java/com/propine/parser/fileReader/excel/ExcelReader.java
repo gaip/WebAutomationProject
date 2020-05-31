@@ -61,16 +61,15 @@ public class ExcelReader {
 					}
 				}
 			}
-		} catch (
-				FileNotFoundException fnf) {
-			fnf.printStackTrace();
+		} catch (FileNotFoundException fnf) {
+			throw new IllegalStateException("Unable to find TestData file.", fnf);
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			throw new IllegalStateException("Unable to operate on TestData file", ioe);
 		}
 
 		// check if data present
 		if (data.length == 0) {
-			throw new IllegalStateException("Test Data not initialized.");
+			throw new IllegalStateException("Test Data not initialized correctly.");
 		}
 	}
 

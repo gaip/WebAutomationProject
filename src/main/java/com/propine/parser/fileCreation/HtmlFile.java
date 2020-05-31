@@ -33,7 +33,7 @@ public class HtmlFile {
 			bufferedWriter.newLine();
 			bufferedWriter.close();
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			throw new IllegalStateException("Unable to create execution report.", ioe);
 		}
 
 		logger.info("HTML File Created at Path:: " + FilePathConstants.OUTPUT_DIRECTORY_FILE_PATH);

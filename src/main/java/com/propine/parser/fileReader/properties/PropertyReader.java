@@ -35,9 +35,9 @@ public class PropertyReader {
 			properties.load(reader);
 
 		} catch (FileNotFoundException fnf) {
-			fnf.printStackTrace();
+			throw new IllegalStateException("Unable to find properties file.", fnf);
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			throw new IllegalStateException("Unable to operate on properties file.", ioe);
 		}
 	}
 

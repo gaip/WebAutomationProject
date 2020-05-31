@@ -46,11 +46,12 @@ public class RuntimeTestNG {
 		suite.setThreadCount(5);
 		suite.setParallel(XmlSuite.ParallelMode.METHODS);
 
-		// adding listeners
+		// adding custom listeners
 		String customListener = "com.propine.parser.listeners.CustomListeners";
 		List<String> listenersList = new ArrayList<>();
 		listenersList.add(customListener);
 
+		// add listener to suite
 		suite.setListeners(listenersList);
 
 		// creating list of tests to add to suite tag
@@ -58,7 +59,7 @@ public class RuntimeTestNG {
 
 		// creating new test
 		XmlTest test = new XmlTest(suite);
-		test.setName("ParserTest");
+		test.setName("Date Parser Test");
 
 		// creating class List to add all the class that are set for execution
 		List<XmlClass> classList = new ArrayList<XmlClass>();

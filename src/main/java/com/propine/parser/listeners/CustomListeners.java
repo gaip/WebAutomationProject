@@ -43,7 +43,6 @@ public class CustomListeners implements IResultListener2 {
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		logger.info("TestCase:: " + result.getName() + " Executed Successfully!");
-
 	}
 
 	@Override
@@ -81,6 +80,11 @@ public class CustomListeners implements IResultListener2 {
 
 	}
 
+	/**
+	 * Updating invocation count in map to keep track of how many times testcases was executed
+	 *
+	 * @param testMethodName testcase name
+	 */
 	private void updateInvocationCount(@NonNull String testMethodName) {
 		if (MapUtils.isNotEmpty(testcaseInvocationCount)) {
 			if (testcaseInvocationCount.get(testMethodName) == null) {
@@ -94,10 +98,15 @@ public class CustomListeners implements IResultListener2 {
 		}
 	}
 
-	private void createTestDirectory(String testName) {
-		int i = testcaseInvocationCount.get(testName);
+	/**
+	 * Creating directory in output folder to store step screenshot
+	 *
+	 * @param testMethodName testcase name
+	 */
+	private void createTestDirectory(String testMethodName) {
+		int i = testcaseInvocationCount.get(testMethodName);
 
-		String directoryName = testName + "_" + i;
+		String directoryName = testMethodName + "_" + i;
 		Directory.createTestCaseDirectory(directoryName);
 	}
 }

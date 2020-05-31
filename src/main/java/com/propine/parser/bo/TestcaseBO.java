@@ -16,4 +16,5 @@ public class TestcaseBO {
 	private String testValue;
 	private String expectedResult;
 	private String actualResult;
+	private String screenShotNamePrefix;
 }

@@ -14,6 +14,12 @@ public class Screenshot {
 
 	private static Logger logger = Logger.getLogger(Screenshot.class);
 
+	/**
+	 * Capture screenshot
+	 *
+	 * @param driver         WebDriver
+	 * @param screenshotName fileName
+	 */
 	public static void capture(WebDriver driver, String screenshotName) {
 		File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String screenshotNameWithExt = screenshotName + ".png";
