@@ -1,7 +1,8 @@
 package com.propine.parser.directoryManager;
 
-import com.propine.parser.constants.PathConstants;
+import com.propine.parser.constants.FilePathConstants;
 import org.apache.log4j.Logger;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,13 +22,13 @@ public class Directory {
 		cleanOutputDirectory();
 
 		// create new directory
-		File outputDir = new File(PathConstants.OUTPUT_DIRECTORY_FILE_PATH);
+		File outputDir = new File(FilePathConstants.OUTPUT_DIRECTORY_FILE_PATH);
 		outputDir.mkdirs();
 
 		// create log file to store logs
 		logger.info("Creating new log file.");
 		String fileName = "log.txt";
-		File logFile = new File(PathConstants.OUTPUT_DIRECTORY_FILE_PATH + "/" + fileName);
+		File logFile = new File(FilePathConstants.OUTPUT_DIRECTORY_FILE_PATH + "/" + fileName);
 		try {
 			logFile.createNewFile();
 		} catch (IOException ioe) {
@@ -36,11 +37,22 @@ public class Directory {
 	}
 
 	/**
+	 * To create testcase wise directory
+	 *
+	 * @param directoryName testcaseName with invocation count
+	 */
+	public static void createTestCaseDirectory(String directoryName) {
+
+		File dir = new File(FilePathConstants.SCREENSHOT_DIRECTORY_FILE_PATH + "/" + directoryName);
+		dir.mkdirs();
+	}
+
+	/**
 	 * Delete existing directory
 	 */
 	private void cleanOutputDirectory() {
 		logger.warn("Deleting existing directory and files.");
-		File outputDir = new File(PathConstants.OUTPUT_DIRECTORY_FILE_PATH);
+		File outputDir = new File(FilePathConstants.OUTPUT_DIRECTORY_FILE_PATH);
 		removeFiles(outputDir);
 	}
 
@@ -63,5 +75,17 @@ public class Directory {
 			}
 		}
 		outputDir.delete();
+	}
+
+	/**
+	 * Unit test to check creation and deletion of files and directory
+	 */
+	@Test
+	public void unitTest() {
+		Directory directory = new Directory();
+		directory.createOutputDirectory();
+
+		// testcase directory
+		Directory.createTestCaseDirectory("Test1");
 	}
 }

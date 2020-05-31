@@ -29,6 +29,8 @@ public class WebDriverActions {
         if (ele.isEnabled()) {
             ele.sendKeys(value);
         }
+
+
     }
 
     public boolean click(WebDriver driver, By by) {

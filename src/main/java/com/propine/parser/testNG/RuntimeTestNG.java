@@ -1,6 +1,6 @@
 package com.propine.parser.testNG;
 
-import com.propine.parser.constants.PathConstants;
+import com.propine.parser.constants.FilePathConstants;
 import com.propine.parser.dataProvider.TestDataProvider;
 import org.apache.log4j.Logger;
 import org.reflections.Reflections;
@@ -46,12 +46,19 @@ public class RuntimeTestNG {
 		suite.setThreadCount(5);
 		suite.setParallel(XmlSuite.ParallelMode.METHODS);
 
+		// adding listeners
+		String customListener = "com.propine.parser.listeners.CustomListeners";
+		List<String> listenersList = new ArrayList<>();
+		listenersList.add(customListener);
+
+		suite.setListeners(listenersList);
+
 		// creating list of tests to add to suite tag
 		List<XmlTest> testList = new ArrayList<>();
 
 		// creating new test
 		XmlTest test = new XmlTest(suite);
-		test.setName("Demo");
+		test.setName("ParserTest");
 
 		// creating class List to add all the class that are set for execution
 		List<XmlClass> classList = new ArrayList<XmlClass>();
@@ -74,12 +81,6 @@ public class RuntimeTestNG {
 
 			// iterating on all methods and adding to the class
 			for (Method method : allMethods) {
-
-				/*
-					Code to filter methods on runtime can be added here.
-					You can fetch methods to be executed from an external file and can compare by methods name here.
-					If matched then add it to the list. So we can control which method to run.
-				 */
 
 				// creating method list to add to each class
 				includeMethods.add(new XmlInclude(method.getName()));
@@ -125,8 +126,8 @@ public class RuntimeTestNG {
 
 		final ConfigurationBuilder config = new ConfigurationBuilder()
 				.setScanners(new ResourcesScanner(), new SubTypesScanner(false))
-				.setUrls(ClasspathHelper.forPackage(PathConstants.TESTCASE_PACKAGE_PATH))
-				.filterInputsBy(new FilterBuilder().includePackage(PathConstants.TESTCASE_PACKAGE_PATH));
+				.setUrls(ClasspathHelper.forPackage(FilePathConstants.TESTCASE_PACKAGE_PATH))
+				.filterInputsBy(new FilterBuilder().includePackage(FilePathConstants.TESTCASE_PACKAGE_PATH));
 
 		final Reflections reflect = new Reflections(config);
 

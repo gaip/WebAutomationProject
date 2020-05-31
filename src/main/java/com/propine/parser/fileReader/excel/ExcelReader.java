@@ -1,6 +1,6 @@
 package com.propine.parser.fileReader.excel;
 
-import com.propine.parser.constants.PathConstants;
+import com.propine.parser.constants.FilePathConstants;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -23,7 +23,7 @@ public class ExcelReader {
 	public void generateTestData() {
 
 		try {
-			FileInputStream fis = new FileInputStream(new File(PathConstants.TESTDATA_EXCEL_FILE_PATH));
+			FileInputStream fis = new FileInputStream(new File(FilePathConstants.TESTDATA_EXCEL_FILE_PATH));
 
 			// get workbook
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);

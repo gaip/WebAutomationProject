@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-
-<suite name="TestNG">
-    <test name="Regression Tests" parallel="none">
-        <classes>
-            <class name="dateParser.DateParserTest"/>
-        </classes>
-    </test>
-</suite>
