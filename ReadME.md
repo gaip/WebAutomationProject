@@ -32,4 +32,5 @@ I have created this project with few things in consideration:
 
 Execution starting point is from [StartUp.java](https://github.com/kunalashar25/PropineAssignment/blob/master/src/main/java/com/propine/parser/StartUp.java)
 
-Execution Result is stored in [output directory](https://github.com/kunalashar25/PropineAssignment/tree/master/output)
+Execution Result is stored in [output directory](https://github.com/kunalashar25/PropineAssignment/tree/master/output
+) where few testing scenarios are covered for reference.
